@@ -39,7 +39,7 @@
                 <&macro_press>,
                 <&kp LEFT_GUI>,
                 <&macro_tap>,
-                <&kp LEFT_SHIFT>,
+                <&kp SPACE>,
                 <&macro_release>,
                 <&kp LEFT_GUI>,
                 <&macro_wait_time 5>,
@@ -75,10 +75,10 @@
 
         default_layer {
             bindings = <
-&lt 6 ESC         &kp Q     &kp W     &kp E  &kp R     &kp T                                       &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DEL
-&kp TAB           &kp A     &kp S     &kp D  &kp F     &kp G     &kp INT2           &kp BACKSPACE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
-&lt 5 LEFT_SHIFT  &kp Z     &kp X     &kp C  &kp V     &kp B     &lt 2 SPACE        &lt 2 SPACE    &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
-&kp LCTRL         &kp LGUI  &kp LALT  &ime   &mkp MB1  &mkp MB2  &lt 3 LG(SPACE)    &kp BACKSPACE  &lt 2 ENTER                             &kp RIGHT_ALT  &kp RCTRL
+&lt 6 ESC         &kp Q     &kp W     &kp E      &kp R     &kp T                                   &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DEL
+&kp TAB           &kp A     &kp S     &kp D      &kp F     &kp G  &mkp MB3       &kp SINGLE_QUOTE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
+&lt 5 LEFT_SHIFT  &kp Z     &kp X     &kp C      &kp V     &kp B  &lt 2 SPACE    &lt 2 SPACE       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
+&kp LCTRL         &kp LGUI  &kp LALT  &kp SLASH  &mkp MB1  &ime   &mkp MB2       &kp BACKSPACE     &lt 1 ENTER                             &kp RIGHT_ALT  &kp RCTRL
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;

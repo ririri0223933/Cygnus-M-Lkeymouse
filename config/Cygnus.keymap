@@ -14,6 +14,9 @@
     quick-tap-ms = <0>;
 };
 
+&tog {
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -48,6 +51,14 @@
 
             label = "IME";
         };
+
+        layer_toggle: layer_toggle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp>, <&macro_press>;
+
+            label = "LAYER_TOGGLE";
+        };
     };
 
     behaviors {
@@ -75,10 +86,10 @@
 
         default_layer {
             bindings = <
-&lt 6 ESC       &kp Q     &kp W     &kp E  &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P          &kp BACKSPACE
-&kp TAB         &kp A     &kp S     &kp D  &lt 4 F         &kp G           &mkp MB3           &kp BACKSPACE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
-&kp LEFT_SHIFT  &kp Z     &kp X     &kp C  &kp V           &kp B           &kp UP_ARROW       &kp DEL        &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
-&kp LCTRL       &kp LGUI  &kp LALT  &ime   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &lt 2 SPACE    &lt 1 ENTER                             &kp SLASH      &kp RCTRL
+&lt 6 ESC       &kp Q     &kp W     &kp E   &kp R    &lt 2 T                            &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DELETE
+&kp TAB         &kp A     &kp S     &kp D   &lt 4 F  &kp G    &kp F5     &ime           &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
+&kp LEFT_SHIFT  &kp Z     &kp X     &kp C   &kp V    &kp B    &kp F4     &kp BACKSPACE  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
+&kp LCTRL       &kp LGUI  &kp LALT  &kp F2  &kp F7   &kp F8   &kp F10    &lt 1 SPACE    &lt 3 ENTER                             &kp SLASH      &kp RCTRL
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -86,10 +97,21 @@
 
         FUNCTION {
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6                                        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11           &kp F12
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &trans             &kp GRAVE  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans        &trans        &trans        &trans        &trans          &trans          &trans             &trans     &trans        &trans        &trans        &trans        &kp SQT           &kp NON_US_BACKSLASH
-&trans        &trans        &trans        &trans        &kp LEFT_ARROW  &kp LEFT_SHIFT  &kp RIGHT_ARROW    &trans     &trans                                                  &trans            &kp SLASH
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                           &trans   &trans
+            >;
+
+            sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;
+        };
+
+        Tenkey {
+            bindings = <
+&trans  &trans         &trans              &trans            &trans               &trans                                                        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &kp ASTERISK       &kp AMPERSAND
+&trans  &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)  &kp PAGE_UP           &trans                   &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp PLUS           &kp PIPE
+&trans  &kp PAGE_DOWN  &kp HOME            &trans            &kp END              &kp PAGE_DOWN         &kp DEL                  &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SQT    &kp DOUBLE_QUOTES  &kp PERCENT
+&trans  &trans         &trans              &trans            &trans               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans         &trans                                               &kp LESS_THAN      &kp GREATER_THAN
             >;
 
             sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;
@@ -97,21 +119,10 @@
 
         NUM {
             bindings = <
-&trans  &trans         &trans              &trans            &trans               &trans                                                        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &kp ASTERISK       &kp AMPERSAND
-&trans  &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)  &trans                &trans                   &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp PLUS           &kp PIPE
-&trans  &kp PAGE_DOWN  &kp HOME            &trans            &kp END              &trans                &kp DEL                  &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SQT    &kp DOUBLE_QUOTES  &kp PERCENT
-&trans  &trans         &trans              &trans            &trans               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans         &trans                                               &kp LESS_THAN      &kp GREATER_THAN
-            >;
-
-            sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;
-        };
-
-        ARROW {
-            bindings = <
-&trans  &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                          &trans  &trans
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&kp GRAVE       &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans        &trans        &trans        &kp SEMICOLON         &kp SQT
+&kp LEFT_SHIFT  &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &trans        &kp COMMA     &kp PERIOD    &kp NON_US_BACKSLASH  &kp RIGHT_SHIFT
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans        &trans        &trans        &trans    &trans  &trans                                                  &kp SLASH             &kp RCTRL
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -119,10 +130,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans                                &trans          &trans           &mmv MOVE_UP    &trans           &trans  &kp DEL
-&trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans          &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans    &trans      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1  &mkp MB2    &trans          &trans                                                            &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                                &trans          &trans           &kp UP_ARROW    &trans           &kp LG(UP_ARROW)     &kp PAGE_UP
+&trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans          &msc SCRL_UP    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(RIGHT_ARROW)  &kp PAGE_DOWN
+&trans  &trans  &trans  &trans  &trans    &trans    &trans      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp HOME        &kp END          &kp LG(LEFT_ARROW)   &trans
+&trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1  &mkp MB2    &trans          &trans                                                            &trans               &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;

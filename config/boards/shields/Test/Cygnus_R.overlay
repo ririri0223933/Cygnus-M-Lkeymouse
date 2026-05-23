@@ -20,6 +20,17 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        smaller_dpi {
+            layers = <4>;
+            input-processors =
+                <&zip_xy_scaler 1 2>;
+        };
+    
+        change_layer {
+            layers = <0>;
+            input-processors = 
+                <&zip_xy_scaler 1 1>,
+        };
     };
 };
 

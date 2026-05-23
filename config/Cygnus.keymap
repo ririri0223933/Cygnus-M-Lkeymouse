@@ -79,18 +79,18 @@
 
             tap-ms = <20>;
         };
-    };
 
-    mouse_slow: mouse_slow {
-        compatible = "zmk,input-processor-mouse-transform";
-        x-scale = <0.5>;
-        y-scale = <0.5>;
-    };
-
-    mouse_normal: mouse_normal {
-        compatible = "zmk,input-processor-mouse-transform";
-        x-scale = <1.0>;
-        y-scale = <1.0>;
+        mouse_slow: mouse_slow {
+            compatible = "zmk,input-processor-mouse-transform";
+            x-scale = <0.5>;
+            y-scale = <0.5>;
+        };
+    
+        mouse_normal: mouse_normal {
+            compatible = "zmk,input-processor-mouse-transform";
+            x-scale = <1.0>;
+            y-scale = <1.0>;
+        };
     };
 
     keymap {

@@ -80,26 +80,12 @@
 
             tap-ms = <20>;
         };
-
-        mouse_slow: mouse_slow {
-            compatible = "zmk,input-processor-mouse-transform";
-            x-scale = <50>;
-            y-scale = <50>;
-        };
-    
-        mouse_normal: mouse_normal {
-            compatible = "zmk,input-processor-mouse-transform";
-            x-scale = <100>;
-            y-scale = <100>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            input-processors = <&mouse_normal>;
-
             bindings = <
 &lt 6 ESC       &kp Q     &kp W     &kp E   &kp R    &lt 2 T                            &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DELETE
 &kp TAB         &kp A     &kp S     &kp D   &lt 4 F  &kp G    &kp F5     &ime           &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
@@ -144,8 +130,6 @@
         };
 
         MOUSE {
-            input-processors = <&mouse_slow>;
-
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans                                &trans          &trans           &kp UP_ARROW    &trans           &kp LG(UP_ARROW)     &kp PAGE_UP
 &trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans          &msc SCRL_UP    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(RIGHT_ARROW)  &kp PAGE_DOWN

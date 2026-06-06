@@ -109,10 +109,10 @@
 
         TENKEY {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &kp ASTERISK       &kp AMPERSAND
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp PLUS           &kp PIPE
-&trans  &trans  &trans  &trans  &trans  &trans  &kp DEL    &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SQT    &kp DOUBLE_QUOTES  &kp PERCENT
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans                                               &kp LESS_THAN      &kp GREATER_THAN
+&trans  &none   &none   &none   &none   &none                             &kp AMPERSAND  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LESS_THAN  &kp GREATER_THAN
+&trans  &none   &none   &none   &none   &none   &trans     &kp BACKSPACE  &kp PIPE       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS      &kp PLUS
+&trans  &none   &none   &none   &none   &none   &kp DEL    &kp SQT        &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SEMICOLON  &kp PERCENT
+&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans                                                   &kp SLASH      &kp ASTERISK
             >;
 
             sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;

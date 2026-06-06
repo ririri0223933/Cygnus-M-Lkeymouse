@@ -87,10 +87,10 @@
 
         default_layer {
             bindings = <
-&lt 6 ESC       &kp Q     &kp W     &kp E   &kp R    &lt 2 T                               &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DELETE
-&kp TAB         &kp A     &kp S     &kp D   &lt 4 F  &kp G     &kp F5       &kp BACKSPACE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
-&kp LEFT_SHIFT  &kp Z     &kp X     &kp C   &kp V    &kp B     &kp F4       &ime           &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
-&kp LCTRL       &kp LGUI  &kp LALT  &kp F2  &kp F7   &lt 5 F8  &lt 2 F10    &lt 1 SPACE    &lt 3 ENTER                             &kp SLASH      &kp RCTRL
+&lt 6 ESC       &kp Q      &kp W         &kp E         &kp R    &lt 2 T                               &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DELETE
+&kp TAB         &kp A      &kp S         &kp D         &lt 4 F  &kp G     &kp F5       &kp BACKSPACE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
+&kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V    &kp B     &lt 4 F2     &ime           &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
+&kp LCTRL       &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &kp F7   &lt 5 F8  &lt 2 F10    &lt 1 SPACE    &lt 3 ENTER                             &kp SLASH      &kp RCTRL
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -131,10 +131,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans                                &trans          &trans           &kp UP_ARROW    &trans           &kp LG(UP_ARROW)     &kp PAGE_UP
-&trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans          &msc SCRL_UP    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(RIGHT_ARROW)  &kp PAGE_DOWN
-&trans  &trans  &trans  &trans  &trans    &trans    &trans      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp HOME        &kp END          &kp LG(LEFT_ARROW)   &trans
-&trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1  &mkp MB2    &trans          &trans                                                            &kp LG(DOWN_ARROW)   &trans
+&trans  &none   &none   &none   &none     &none                         &kp HOME            &kp UP_ARROW    &kp END              &kp PAGE_UP    &kp LG(UP_ARROW)    &trans
+&trans  &none   &none   &none   &none     &none     &trans      &trans  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp PAGE_DOWN  &kp LG(DOWN_ARROW)  &none
+&trans  &none   &none   &none   &none     &none     &trans      &trans  &kp LG(LEFT_ARROW)  &none           &kp LG(RIGHT_ARROW)  &none          &none               &trans
+&trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1  &mkp MB2    &trans  &trans                                                                  &none               &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;

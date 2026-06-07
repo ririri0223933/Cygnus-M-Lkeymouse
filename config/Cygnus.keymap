@@ -52,14 +52,6 @@
 
             label = "IME";
         };
-
-        layer_toggle: layer_toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp>, <&macro_press>;
-
-            label = "LAYER_TOGGLE";
-        };
     };
 
     behaviors {
@@ -89,8 +81,8 @@
             bindings = <
 &lt 6 ESC       &kp Q      &kp W         &kp E         &kp R     &kp T                                 &kp Y        &kp U  &kp I      &kp O    &kp P          &kp DELETE
 &kp TAB         &kp A      &kp S         &kp D         &kp F     &kp G     &kp F5       &kp BACKSPACE  &kp H        &kp J  &kp K      &kp L    &kp MINUS      &kp EQUAL
-&kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V     &kp B     &kp F2       &ime           &kp N        &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON  &kp RSHFT
-&kp LCTRL       &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 F7  &lt 4 F8  &lt 2 F10    &lt 1 SPACE    &lt 3 ENTER                             &kp SLASH      &kp RCTRL
+&kp LEFT_SHIFT  &kp Z      &kp X         &kp C         &kp V     &kp B     &kp F2       &ime           &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH      &kp RSHFT
+&kp LCTRL       &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &lt 5 F7  &lt 4 F8  &lt 2 F10    &lt 1 SPACE    &lt 3 ENTER                             &kp RIGHT_ALT  &kp RCTRL
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -111,8 +103,8 @@
             bindings = <
 &trans  &none   &none   &none   &none   &none                             &kp AMPERSAND  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LESS_THAN  &kp GREATER_THAN
 &trans  &none   &none   &none   &none   &none   &trans     &kp BACKSPACE  &kp PIPE       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS      &kp PLUS
-&trans  &none   &none   &none   &none   &none   &kp DEL    &kp SQT        &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SEMICOLON  &kp PERCENT
-&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans                                                   &kp SLASH      &kp ASTERISK
+&trans  &none   &none   &none   &none   &none   &kp DEL    &kp SQT        &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH      &kp ASTERISK
+&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans         &trans                                                   &kp PERCENT    &kp SEMICOLON
             >;
 
             sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;
@@ -121,9 +113,9 @@
         KIGOU {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET                    &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp GRAVE        &none        &none     &none       &none        &none      &trans    &trans  &none          &none         &kp MINUS             &kp EQUAL              &kp SEMICOLON     &kp SQT
-&trans           &none        &none     &none       &none        &none      &trans    &trans  &none          &none         &kp COMMA             &kp PERIOD             &kp BACKSLASH     &trans
-&trans           &trans       &trans    &trans      &trans       &trans     &trans    &trans  &trans                                                                    &kp SLASH         &trans
+&kp GRAVE        &none        &none     &none       &none        &none      &trans    &trans  &none          &none         &none                 &none                  &kp SEMICOLON     &kp SQT
+&trans           &none        &none     &none       &none        &none      &trans    &trans  &none          &none         &none                 &none                  &kp BACKSLASH     &trans
+&trans           &trans       &trans    &trans      &trans       &trans     &trans    &trans  &trans                                                                    &trans            &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_LEFT SCRL_RIGHT>;

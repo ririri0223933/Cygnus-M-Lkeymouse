@@ -52,6 +52,35 @@
 
             label = "IME";
         };
+
+        kakko1: kakko1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_PARENTHESIS>,
+                <&macro_wait_time 5>,
+                <&kp RIGHT_PARENTHESIS>;
+
+            label = "KAKKO1";
+        };
+
+        kakko2: kakko1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_BRACKET>,
+                <&macro_wait_time 5>,
+                <&kp RIGHT_BRACKET>;
+
+            label = "KAKKO1";
+        };
+
+        kakko3: kakko3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "KAKKO3";
+        };
     };
 
     behaviors {
